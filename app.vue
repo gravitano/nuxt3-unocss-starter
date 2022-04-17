@@ -13,7 +13,6 @@
 
 <style>
 body {
-  font-family: sans-serif;
-  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 </style>
