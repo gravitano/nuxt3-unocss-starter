@@ -1,11 +1,17 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/ri': ^1.1.1
+  '@iconify/json': ^2.1.28
   '@unocss/nuxt': ^0.31.5
+  '@unocss/preset-icons': ^0.31.5
   nuxt3: latest
 
 devDependencies:
+  '@iconify-json/ri': 1.1.1
+  '@iconify/json': 2.1.28
   '@unocss/nuxt': 0.31.5
+  '@unocss/preset-icons': 0.31.5
   nuxt3: 3.0.0-27501460.04a72f8
 
 packages:
@@ -324,6 +330,19 @@ packages:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@iconify-json/ri/1.1.1:
+    resolution: {integrity: sha512-H2Bvtew65rCw275lZaLk5sxTmmxa9kpd2i2FOVncDLa/Wpn9L6AnTZhR1NzzPb6iqK2D8HE4Y/wcVr6o0KjMlw==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify/json/2.1.28:
+    resolution: {integrity: sha512-6n2SkdiW0DUpGpfq3nKM7V6nlmeLJAz4V3X/lrFOyyVu0cDVOHmtXe4A0/Ur/75NtTDMBtH17jODWHOKmsDz/Q==}
+    dependencies:
+      '@iconify/types': 1.1.0
+      pathe: 0.2.0
     dev: true
 
   /@iconify/types/1.1.0:

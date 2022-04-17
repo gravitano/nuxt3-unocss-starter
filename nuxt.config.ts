@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt3';
+import presetIcons from '@unocss/preset-icons';
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -10,12 +11,19 @@ export default defineNuxtConfig({
     icons: true, // enabled `@unocss/preset-icons`
     attributify: true, // enabled `@unocss/preset-attributify`,
     typography: true,
+    wind: true,
+
+    // presets: [
+    //   presetIcons({
+    //     /* options */
+    //   }),
+    // ],
 
     webFonts: {
       provider: 'google', // default provider
       fonts: {
         // these will extend the default theme
-        sans: 'Poppins',
+        sans: 'Poppins:100,200,300,400,500,600,700,800,900',
         mono: ['Fira Code', 'Fira Mono:400,700'],
         // custom ones
         lobster: 'Lobster',
@@ -36,8 +44,9 @@ export default defineNuxtConfig({
     // core options
     shortcuts: [
       {
-        'form-input':
-          'px-2 py-2 border border-gray-500 rounded-md w-full focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 focus:border-blue-500 focus:outline-none',
+        'form-input': `px-2 py-2 border border-gray-500 rounded-md w-full
+          focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 focus:border-blue-500 focus:outline-none
+          `,
       },
       {
         'btn-primary':
