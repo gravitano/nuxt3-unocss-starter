@@ -34,6 +34,11 @@ const sidebar = ref(false);
 </script>
 
 <template>
+  <div
+    v-if="sidebar"
+    class="fixed inset-0 bg-black/50 z-5 transition duration-300"
+    @click="sidebar = false"
+  ></div>
   <main class="flex flex-col sm:flex-row">
     <aside
       class="px-2 w-10/12 sm:w-300px border-r h-screen fixed sm:sticky top-0 border-gray-200 pb-2 bg-white z-10 flex-col transition-all duration-300 transform sm:transform-none"
