@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     // core options
     shortcuts: [
       {
-        'form-input': `px-2 py-2 border border-gray-500 rounded-md w-full
+        'form-input': `px-2 py-2 border border-gray rounded-md w-full
           focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 focus:border-blue-500 focus:outline-none
           `,
       },
