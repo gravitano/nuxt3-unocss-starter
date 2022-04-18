@@ -25,6 +25,42 @@ watch(
 watch(isOpen, (val) => {
   emit('update:modelValue', val);
 });
+
+const menus = ref([
+  {
+    icon: 'i-ri-home-2-line',
+    text: 'Dashboard',
+    to: '/',
+  },
+  {
+    text: 'Posts',
+    icon: 'i-ri-book-2-line',
+    children: [
+      {
+        text: 'New Post',
+        to: '/posts/create',
+      },
+      {
+        text: 'All Posts',
+        to: '/posts',
+      },
+    ],
+  },
+  {
+    text: 'Pages',
+    icon: 'i-ri-book-line',
+    children: [
+      {
+        text: 'Login',
+        to: '/auth/login',
+      },
+      {
+        text: 'Register',
+        to: '/auth/register',
+      },
+    ],
+  },
+]);
 </script>
 
 <template>
@@ -55,71 +91,7 @@ watch(isOpen, (val) => {
 
     <!-- menu -->
     <ul class="flex-grow">
-      <li>
-        <a
-          href="#"
-          class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-        >
-          <div class="i-ri-dashboard-line w-5 h-5" />
-          Dashboard
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-        >
-          <div class="i-ri-user-line w-5 h-5" />
-          <span class="flex-grow">User</span>
-          <div class="i-ri-arrow-right-s-line w-5 h-5" />
-        </a>
-        <ul class="">
-          <li>
-            <a
-              href="#"
-              class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-            >
-              <div class="w-5"></div>
-              Add User
-            </a>
-            <a
-              href="#"
-              class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-            >
-              <div class="w-5"></div>
-              User List
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-        >
-          <div class="i-ri-book-2-line w-5 h-5" />
-          <span class="flex-grow">Posts</span>
-          <div class="i-ri-arrow-right-s-line w-5 h-5" />
-        </a>
-        <ul class="">
-          <li>
-            <a
-              href="#"
-              class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-            >
-              <div class="w-5"></div>
-              New Post
-            </a>
-            <a
-              href="#"
-              class="px-4 py-2 block transition duration-300 hover:bg-indigo hover:text-white rounded flex gap-2 items-center w-full"
-            >
-              <div class="w-5"></div>
-              Post List
-            </a>
-          </li>
-        </ul>
-      </li>
+      <SidebarItem v-for="menu in menus" :key="menu.text" :menu="menu" />
     </ul>
   </aside>
 </template>
